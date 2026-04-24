@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #FAFAFA;
+    color: #1a1a2e;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+  .btn-accent {
+    @apply bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-gray-100 dark:border-slate-700 p-6;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+  .cefr-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .cefr-a1 { @apply bg-green-100 text-green-800; }
+  .cefr-a2 { @apply bg-emerald-100 text-emerald-800; }
+  .cefr-b1 { @apply bg-blue-100 text-blue-800; }
+  .cefr-b2 { @apply bg-indigo-100 text-indigo-800; }
+  .cefr-c1 { @apply bg-purple-100 text-purple-800; }
+  .cefr-c2 { @apply bg-red-100 text-red-800; }
+}
