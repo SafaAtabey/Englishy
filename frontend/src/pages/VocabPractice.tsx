@@ -64,7 +64,6 @@ export default function VocabPractice() {
 
   // Reset per-card state when mode or index changes
   useEffect(() => {
-    setRevealed(false)
     setInput('')
     setFeedback(null)
     setLetterFeedback([])
