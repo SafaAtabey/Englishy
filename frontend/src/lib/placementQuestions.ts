@@ -115,7 +115,7 @@ export function calculateCEFR(answers: number[], questions: PlacementQuestion[])
 
 export function calculateLevelUp(answers: number[], questions: PlacementQuestion[], nextLevel: string): boolean {
   const nextQ = questions.filter(q => q.level === nextLevel)
-  const correct = nextQ.filter((q, i) => {
+  const correct = nextQ.filter((q, _i) => {
     const idx = questions.indexOf(q)
     return answers[idx] === q.correct
   }).length

@@ -57,8 +57,7 @@ export default function Signup() {
     if (current + 1 < placementQuestions.length) {
       setCurrent(current + 1)
     } else {
-      const score = newAnswers.filter((a, i) => a === placementQuestions[i].correct).length
-      const level = calculateCEFR(score)
+      const level = calculateCEFR(newAnswers, placementQuestions)
       setCefrLevel(level)
       supabase.from('users').update({ cefr_level: level }).eq('id', userId)
       setStep('plan')
