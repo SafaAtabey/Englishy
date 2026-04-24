@@ -29,7 +29,7 @@ export default function VocabPractice() {
   const [done, setDone] = useState(false)
 
   // Per-card state
-  const [revealed, setRevealed] = useState(false)
+
   const [input, setInput] = useState('')
   const [feedback, setFeedback] = useState<{ correct: boolean; message: string } | null>(null)
   const [grading, setGrading] = useState(false)

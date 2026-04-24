@@ -48,8 +48,10 @@ interface Feedback {
 
 declare global {
   interface Window {
-    SpeechRecognition: new () => SpeechRecognition
-    webkitSpeechRecognition: new () => SpeechRecognition
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    SpeechRecognition: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    webkitSpeechRecognition: any
   }
 }
 
@@ -102,7 +104,7 @@ export default function Speaking() {
   const [lastAiText, setLastAiText] = useState('')
   const [showUpgrade, setShowUpgrade] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
-  const recognitionRef = useRef<SpeechRecognition | null>(null)
+  const recognitionRef = useRef<any>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const sessionStartRef = useRef<number>(0)
   const messagesRef = useRef<Message[]>([])
